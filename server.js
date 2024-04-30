@@ -3,7 +3,7 @@ const path = require('path');
 const axios = require('axios');
 const app = express();
 const port = process.env.PORT || 3000;
-const baseUrl = 'http://localhost:8000/api/v1';
+const baseUrl = 'http://localhost:8321/api/v1';
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
@@ -16,6 +16,7 @@ app.post('/getChatbotResponse', async (req, res) => {
     const userMessage = req.body.userMessage;
     // Call the FastAPI endpoint
     try {
+        console.log(`Sending message: ${userMessage}`);
         const response = await axios.get(baseUrl + '/chatbot', {
             params: {
                 message: userMessage
