@@ -11,6 +11,7 @@ function sendMessage() {
     userInput.value = '';
 }
 
+// Listen for the Enter key to send a message
 function displayMessage(sender, message) {
     const messageElement = document.createElement('div');
     messageElement.classList.add('message', sender);
@@ -24,6 +25,7 @@ function displayMessage(sender, message) {
     chatLog.scrollTop = chatLog.scrollHeight;
 }
 
+// Function to get chatbot's response
 function getChatbotResponse(userMessage) {
     // Make a request to your server with the user's message
     fetch('/getChatbotResponse', {

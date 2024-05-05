@@ -36,4 +36,4 @@ async def chatbot(message: str = "Hello"):
     return {"response": response}
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8321, loop="asyncio")
+    uvicorn.run("main:app", host="0.0.0.0", port=80, loop="asyncio")
