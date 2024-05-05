@@ -1,6 +1,13 @@
 const chatLog = document.getElementById('chat-log');
 const userInput = document.getElementById('user-input');
 
+userInput.addEventListener('keypress', function(event) {
+    if (event.keyCode == 13) {
+        event.preventDefault(); // Prevents the default action
+        sendMessage();
+    }
+});
+
 function sendMessage() {
     const message = userInput.value;
     // Display user's message
